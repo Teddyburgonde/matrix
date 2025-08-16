@@ -22,7 +22,26 @@
 		 
 	} 
 
+
+
+
+Crée deux vecteurs double[] de dimension 3 :
+
+v1=(2,4,−1)
+v1=(2,4,−1)
+
+v2=(5,0,3)
+v2=(5,0,3)
+
+Crée un troisième vecteur result qui sera la somme des deux (formule :
+
+result[i]=v1[i]+v2[i]
+result[i]=v1[i]+v2[i] ).
+
+Affiche le résultat sous la forme :
+
 */
+
 
 
 public class Matrix { 
