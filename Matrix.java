@@ -1,7 +1,7 @@
 /*
 
 	public static void printMatrix(double matrix[][])
-    	{
+    {
 		for (int i = 0; i < matrix.length; i++)
 		{
 			for (int j = 0; j < matrix[i].length; j++)
@@ -13,61 +13,57 @@
 	}
 
 
-	public static void main(String[] args) {
-			
-		// 1. Crée une matrice double[3][3].
-		double[][] matrix = new double [3][3]; 
-
-		// 2. Mets la valeur 1.0 en haut à gauche (ligne 0, colonne 0).
-		matrix[0][0] = 1.0;
-
-		// 3. Mets la valeur 9.0 en bas à droite (ligne 2, colonne 2).
-		
-		matrix[2][2] = 9.0;
-
-		// 4. Mets la valeur 4.5 au centre (ligne 1, colonne 1).
-		
-		matrix[1][1] = 4.5;
-		
-		// 5. Affiche toute la matrice avec ta fonction printMatrix.
-		
-		printMatrix(matrix);
-
-		 
-	} 
 
 
+Prochain mini-exercice (très simple) — c * M
 
+Garde m1 comme dans ton code.
 
-Crée deux vecteurs double[] de dimension 3 :
+Crée double c = 2.0;
 
-v1=(10,−2,5)
-v2=(3,7,−1)
+Crée double[][] scaled = new double[2][2];
 
-Crée un troisième vecteur result qui sera la somme des deux 
+Remplis scaled[i][j] = c * m1[i][j];
 
-result[i]=v1[i]+v2[i]
+Affiche scaled (attendu) :
 
-Affiche le résultat sous la forme :
-[7.0, -9.0, 6.0]
+2.0   4.0
+6.0   8.0
+
 */
 
 
 import java.util.Arrays;
 
 public class Matrix { 
-
+	public static void printMatrix(double matrix[][])
+    {
+		for (int i = 0; i < matrix.length; i++)
+		{
+			for (int j = 0; j < matrix[i].length; j++)
+			{
+				System.out.print( matrix[i][j]  + "\t");
+	     		}
+	     		System.out.println();
+	   	}
+	}
 	public static void main(String[] args) 
 	{ 
-		double[] v1 = {10.0, -2.0, 5.0};
-		double[] v2 = {3.0, 7.0, -1.0};
+		double[][] m1 = { 
+			{1, 2},
+			{3, 4}
+		};
 		
-		double[] sums = new double[v1.length];
+		double c = 2.0;
 		
-		for (int i = 0; i < sums.length; ++i) {
-			sums[i] = v1[i] - v2[i];
+		double[][] scaled = new double[2][2];
+		
+		for (int i = 0; i < m1.length; ++i) {
+			for (int j = 0; j < m1[i].length; ++j){
+				scaled[i][j] = c * m1[i][j];
+			}
 		}
-		System.out.println(Arrays.toString(sums));
+		printMatrix(scaled); 
 	}
 }
 	

@@ -5,14 +5,14 @@
 - ✅ Lire/écrire une valeur dans un vecteur (`v[0]`, `v[1]` …)
 - ✅ Addition de deux vecteurs (`v1 + v2`)
 - ✅ Soustraction de deux vecteurs (`v1 - v2`)
-- ❌ Multiplication par un scalaire (`c * v`)
+- ✅ Multiplication par un scalaire (`c * v`)
 
 ## 🟢 MATRICES
 - ✅ Créer une matrice (`double[][]`)
 - ✅ Lire/écrire une valeur dans une matrice (`matrix[i][j]`)
 - ✅ Addition de deux matrices
-- ❌ Soustraction de deux matrices
-- ❌ Multiplication par un scalaire (`c * M`)
+- ✅ Soustraction de deux matrices
+- ✅ Multiplication par un scalaire (`c * M`)
 - ❌ Multiplication matrice × vecteur
 
 ## 🟢 PROGRAMMATION JAVA
