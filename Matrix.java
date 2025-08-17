@@ -14,6 +14,16 @@
 
 
 
+Calcule et affiche :
+
+M × I2 (attendu = M)
+
+I2 × M (attendu = M)
+
+M × Z2 (attendu = Z2)
+
+Z2 × M (attendu = Z2)
+
 */
 
 // formule
@@ -25,27 +35,33 @@ import java.util.Arrays;
 public class Matrix { 
 	public static void main(String[] args) 
 	{ 
-		// Creation de deux matrices 
+		// Creation matrice
 
-		double[][] m1 = {
-			{2, 3},
-			{1, 4}
+		double[][] A = {
+			{1, 0, 5},
+			{0, 1, 2},
+			{5, 2, 4}
 		};
-
-		double[][] m2 = {
-			{5, 6},
-			{7, 8}
+		
+		double[][] B = {
+			{5, 2},
+			{1, 1},
+			{7, 2}
 		};
+		
+		
 
-		double[][] result = new double[2][2];
-
-		for (int i = 0; i < m1.length; ++i) {
-			for (int j = 0; j < m2[0].length; ++j) {
-				for (int k = 0; k < m1[0].length; ++k) {
-					result[i][j] += m1[i][k] * m2[k][j];
+		double[][] result = new double[A.length][B[0].length];
+		
+		for (int i = 0; i < A.length; ++i) {
+			for (int j = 0; j < B[0].length; ++j) {
+				for (int k = 0; k < A[0].length; ++k) {
+					result[i][j] += A[i][k] * B[k][j];
 				}
 			}
 		}
+		
+		
 		
 
 		for (int i = 0; i < result.length; ++i) {
