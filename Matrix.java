@@ -14,60 +14,10 @@
 
 
 
-
-Prochain mini-exercice (très simple) — c * M
-
-Garde m1 comme dans ton code.
-
-Crée double c = 2.0;
-
-Crée double[][] scaled = new double[2][2];
-
-Remplis scaled[i][j] = c * m1[i][j];
-
-Affiche scaled (attendu) :
-
-2.0   4.0
-6.0   8.0
-
-//////
-
-Soit la matrice 2×2 et le vecteur 2×1 :
-
-M=[1 2]
-     [3 4]
- 
-v=[5]
-     [6​]
-
-Le produit  M×v donne :
-
-[1×5+2×6]            = [17]
-[3×5+4×6]               [39]
-39]
-
-Étapes à coder en Java :
-
-Créer la matrice M et le vecteur v. OK
-
-Créer un vecteur result de même taille que v.
-
-Utiliser une boucle sur les lignes de la matrice :
-
-pour chaque ligne i, calculer la somme des m[i][j] * v[j].
-
-Afficher le vecteur résultat.
-
-
-
-
-
-
-//////
-
 */
 
-
+// formule
+// result[i][j] += A[i][k] * B[k][j];
 
 
 import java.util.Arrays;
@@ -75,25 +25,33 @@ import java.util.Arrays;
 public class Matrix { 
 	public static void main(String[] args) 
 	{ 
+		// Creation de deux matrices 
+
 		double[][] m1 = {
-			{1, 2},
-			{3, 4}
+			{2, 3},
+			{1, 4}
 		};
+
+		double[][] m2 = {
+			{5, 6},
+			{7, 8}
+		};
+
+		double[][] result = new double[2][2];
+
+		for (int i = 0; i < m1.length; ++i) {
+			for (int j = 0; j < m2[0].length; ++j) {
+				for (int k = 0; k < m1[0].length; ++k) {
+					result[i][j] += m1[i][k] * m2[k][j];
+				}
+			}
+		}
 		
-		double[] v1 = {5, 6};
 
-		double [] result = new double[v1.length];
+		for (int i = 0; i < result.length; ++i) {
 
-		for (int i = 0; i < m1.length; i++)
-		{
-			for (int j = 0; j < m1[i].length; j++)
-			{
-				result[i] += m1[i][j] * v1[j];
-	     		}
-	   	}
-		System.out.println(Arrays.toString(result));
-				
-
+			System.out.println(Arrays.toString(result[i]));
+		}
 	}
 }
 	
