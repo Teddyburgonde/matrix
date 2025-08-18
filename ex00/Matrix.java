@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Matrix {
 
 	public static double[] addVector(double[] v1, double[]v2) {
