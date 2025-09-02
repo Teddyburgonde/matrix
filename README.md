@@ -1,43 +1,31 @@
-# Roadmap - Exercice 00 (Matrix Project)
+# Roadmap - Exercice 03 (Dot Product)
 
-## 🟢 VECTEURS
-- ✅ Créer un vecteur en Java (`double[]`)
-- ✅ Lire/écrire une valeur dans un vecteur (`v[0]`, `v[1]` …)
-- ✅ Addition de deux vecteurs (`v1 + v2`)
-- ✅ Soustraction de deux vecteurs (`v1 - v2`)
-- ✅ Multiplication par un scalaire (`c * v`)
+## 🟢 Notions à maîtriser
+- ✅ Comprendre ce qu’est un **produit scalaire** :  
+  (a₁, a₂, …, aₙ) ⋅ (b₁, b₂, …, bₙ) = a₁b₁ + a₂b₂ + … + aₙbₙ
+- ✅ Savoir calculer des exemples **à la main**
+- ✅ Créer deux vecteurs en Java (`double[]`)
+- ✅ Parcourir un vecteur avec une boucle `for`
+- ❌ Accumuler une somme dans une variable (`dot += ...`)
 
-## 🟢 MATRICES
-- ✅ Créer une matrice (`double[][]`)
-- ✅ Lire/écrire une valeur dans une matrice (`matrix[i][j]`)
-- ✅ Addition de deux matrices
-- ✅ Soustraction de deux matrices
-- ✅ Multiplication par un scalaire (`c * M`)
-- ✅ Multiplication matrice × vecteur
+---
 
-## 🟢 PROGRAMMATION JAVA
-- ✅ Être à l’aise avec les indices (commencent à 0)
-- ✅ Savoir afficher une matrice avec `printMatrix`
-- ✅ Utiliser une boucle `for` pour afficher un vecteur
-- ✅ Utiliser des boucles `for` imbriquées pour manipuler une matrice
+## 🟢 Mini-exercices
+1. ✅ **À la main** :  
+   Exemple déjà fait : (1, 3, -2) ⋅ (4, -1, 5) = -9  
+   Exemple déjà fait : (2, -4, 1, 3) ⋅ (0, 5, -2, 1) = -19  
 
+2. ❌ **Petit code Java** :  
+   Implémente une fonction `dotProduct(double[] v1, double[] v2)` qui retourne un `double`.
 
-# Roadmap - Exercice 01 (Matrix Project)
+3. ❌ **Cas de base** :  
+   Tester avec (1, 0) ⋅ (0, 1) = 0.
 
+4. ❌ **Cas plus gros** :  
+   Tester avec des vecteurs de dimension 4 ou 5.
 
-🟢 PRODUIT SCALAIRE & NORME
+---
 
-- ✅ Savoir calculer le produit scalaire de deux vecteurs (v1 · v2)
-- ❌ Savoir calculer la norme d’un vecteur (‖v‖ = √(v · v))
-- ❌ Savoir calculer la distance entre deux vecteurs (‖v1 - v2‖)
+## 🎯 Objectif
+Quand tout est en ✅, tu peux attaquer l’**Exercice 03** du sujet sans hésitation.
 
-🟢 MATRICES (AVANCÉ)
-
-- ❌ Multiplication de deux matrices (M1 × M2)
-- ❌ Transposée d’une matrice (M^T)
-
-🟢 PROGRAMMATION JAVA
-
-- ❌ Créer une fonction qui prend un vecteur ou une matrice en paramètre
-- ❌ Retourner un résultat (ex: un double, un vecteur, ou une matrice)
-- ❌ Organiser le code pour éviter la répétition (méthodes réutilisables)
