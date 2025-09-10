@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Inverse {
 
 	public static double determinant2x2(double[][] A) {
@@ -37,7 +39,7 @@ A−1 =    1              [d -b]
 
 	public static double[][] inverse3x3(double[][] A) {
 
-		double det = determinant2x2(A);
+		double det = determinant3x3(A);
 		
 		if (det == 0)
 			throw new IllegalArgumentException("Matrix has no inverse (det = 0)");
@@ -89,14 +91,85 @@ A−1 =    1              [d -b]
 	public static double[][] inverse4x4(double[][] A) {
 
 
-		double det = determinant2x2(A);
+		double det = determinant3x3(A);
 
 		if (det == 0)
 			throw new IllegalArgumentException("Matrix has no inverse (det = 0)");
 
- 		// à compléter
-		// Pour une 4×4, chaque cofacteur est un déterminant de 3×3.
+		double[][] cofactor = new double[4][4];
+		
+		// matrice des cofacteurs
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				double[][] minor = new double[3][3];
+				int row = 0, col;
+ 					for (int r = 0; r < 4; r++) {
+						if (r == i) 
+							continue;
+                				col = 0;
+ 						for (int c = 0; c < 4; c++) {
+							if (c == j) 
+								continue;
+							minor[row][col] = A[r][c];
+ 							col++;
+ 						}
+						row++;
+            				}
+					cofactor[i][j] = Math.pow(-1, i + j) * determinant3x3(minor);
+			}
+		}		
+		// transpose (adjoint)
+ 		double[][] adj = new double[4][4];
+ 		for (int i = 0; i < 4; i++) {
+ 			for (int j = 0; j < 4; j++) {
+  				adj[i][j] = cofactor[j][i];
+ 			}
+		}
+	
+		// (1/det) * adj
+ 		double[][] inverse = new double[4][4];
+ 		for (int i = 0; i < 4; i++) {
+ 			for (int j = 0; j < 4; j++) {
+ 				inverse[i][j] = adj[i][j] / det;
+        		}
+		}
+		return inverse;
 	}
 
+	public static void main(String[] args) {
+        	// Test 1 : Identité 3x3
+        	double[][] m1 = {
+            	{1., 0., 0.},
+            	{0., 1., 0.},
+            	{0., 0., 1.} };
+	System.out.println(Arrays.deepToString(Inverse.inverse3x3(m1)));
+	// expected:
+	// [1.0, 0.0, 0.0]
+	// [0.0, 1.0, 0.0]
+	// [0.0, 0.0, 1.0]
 
+	// Test 2 : Diagonale simple
+	double[][] m2 = {
+            {2., 0., 0.},
+            {0., 2., 0.},
+            {0., 0., 2.}
+        };
+	System.out.println(Arrays.deepToString(Inverse.inverse3x3(m2)));
+        // expected:
+        // [0.5, 0.0, 0.0]
+        // [0.0, 0.5, 0.0]
+        // [0.0, 0.0, 0.5]
+
+        // Test 3 : Cas général
+        double[][] m3 = {
+            {8., 5., -2.},
+            {4., 7., 20.},
+            {7., 6., 1.}
+        };
+	System.out.println(Arrays.deepToString(Inverse.inverse3x3(m3)));
+        // expected approx:
+        // [0.649425287, 0.097701149, -0.655172414]
+        // [-0.781609195, -0.126436782, 0.965517241]
+        // [0.143678161, 0.074712644, -0.206896552]
+    }
 }
