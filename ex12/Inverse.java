@@ -18,9 +18,9 @@ public class Inverse {
 	}
 
 /*
-A−1 =    1              [d -b]
-	 ----------        [-c a]
-	ad - bc 
+A−1 =    			1              [d -b]
+	 			----------        [-c a]
+				ad - bc 
 */
 	public static double[][] inverse2x2(double[][] A) {
 
