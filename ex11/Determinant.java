@@ -30,25 +30,27 @@ public class Determinant {
 	
 		double det = 0;
 
-		// Expansion par cofacteurs sur la 1ère ligne
+		// Expansion by cofactors on the first line
 		for (int col = 0; col < 4; col++) {
-        		// Construire la sous-matrice 3x3
+        	// Construct the 3x3 submatrix
 			double[][] subMatrix = new double[3][3];
-			for (int i = 1; i < 4; i++) { // saute la première ligne
+			for (int i = 1; i < 4; i++) { // skip the first line
 				int subCol = 0;
 				for (int j = 0; j < 4; j++) {
-					if (j == col) 
-						continue; // saute la colonne du pivot
+					if (j == col) // col pivot
+						continue;
+					// Contains the element that is on row i and column j.
 					subMatrix[i - 1][subCol] = A[i][j];
 					subCol++;
 				}
         	}
-
  			double sign;
+			// if column is even
 			if (col % 2 == 0)
 				sign = 1;
 			else
 				sign = -1;
+			// mathematical formula
 			det += sign * A[0][col] * determinant3x3(subMatrix);
 		}
 		return det;

@@ -19,6 +19,7 @@ public class Rank {
 		return A;
 	}
 
+	// Rank = number of rows not null in row echelon form.
 	public static int rank(double[][] A) {
 
 		double[][] echelon = rowEchelon(A);
@@ -27,44 +28,44 @@ public class Rank {
 		for (int i = 0; i < echelon.length; i++) {
 			boolean nonZeroRow = false;
 			for (int j = 0; j < echelon[0].length; j++) {
-					// tolérance pour éviter les erreurs numériques
-					if (Math.abs(echelon[i][j]) > 1e-9) 
-					{
-                				nonZeroRow = true;
-						break;
-					}
+				// tolerance to avoid numerical errors
+				if (Math.abs(echelon[i][j]) > 1e-9) 
+				{
+					nonZeroRow = true; 
+					break;
+				}
 			}
-			if (nonZeroRow) 
+			if (nonZeroRow)
 				rank++;
 		}
 		return rank;
 	}
 
 	public static void main(String[] args) {
-		// Exemple 1 : Matrice identité 3x3
+		// Exemple 1 : Matrix 3x3
 		double[][] m1 = {
-		{1., 0., 0.},
-		{0., 1., 0.},
-		{0., 0., 1.} };
+		{1.0, 0.0, 0.0},
+		{0.0, 1.0, 0.0},
+		{0.0, 0.0, 1.0} };
 		System.out.println(rank(m1)); 
 		// expected: 3
 
 		double[][] m2 = {
-            	{1., 2.},
-            	{3., 4.} };
+            	{1.0, 2.0},
+            	{3.0, 4.0} };
 		System.out.println(rank(m2));
         	// expected: 2
 
 		double[][] m3 = {
-		{1., 2.},
-		{2., 4.} };
+		{1.0, 2.0},
+		{2.0, 4.0} };
 		System.out.println(rank(m3));
 		// expected: 1
 
 		double[][] m4 = {
-		{1., 2., 3.},
-		{0., 0., 0.},
-		{4., 5., 6.} };
+		{1.0, 2.0, 3.0},
+		{0.0, 0.0, 0.0},
+		{4.0, 5.0, 6.0} };
 		System.out.println(rank(m4));
 		// expected: 2
 	}

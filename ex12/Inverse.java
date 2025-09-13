@@ -31,6 +31,7 @@ A−1 =    			1              [d -b]
 		double [][] inverse =new double[2][2];
 		inverse[0][0] =  A[1][1] / det;
     		inverse[0][1] = -A[0][1] / det;
+		// Mathematical formula
 		inverse[1][0] = -A[1][0] / det;
 		inverse[1][1] =  A[0][0] / det;
     
@@ -46,21 +47,21 @@ A−1 =    			1              [d -b]
 
 		double[][] cofactor = new double[3][3];
 
-		// Calcul de la matrice des cofacteurs
+		// Calculation of the cofactor matrix
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				// Construire la sous-matrice 2x2
+				// Build sub-matrice 2x2
 				double[][] minor = new double[2][2];
 				int row = 0, col;
 				for (int r = 0; r < 3; r++) {
-					if (r == i)
+					if (r == i) // pivot skip
 						continue;
 					col = 0;
 					for (int c = 0; c < 3; c++) {
 						if (c == j) 
 							continue;
-					minor[row][col] = A[r][c];
-					col++;
+						minor[row][col] = A[r][c];
+						col++;
 					}
 					row++;
 				}
@@ -69,20 +70,19 @@ A−1 =    			1              [d -b]
 			}
  		}
 
-		// Transposée des cofacteurs = adj(A)
+		// Transposed cofactors = adj(A)
+		// each box is a small number calculated with a determinant
 		double[][] adj = new double[3][3];
 		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
+			for (int j = 0; j < 3; j++)
  				adj[i][j] = cofactor[j][i];
-            		}
 		}
 
 		// Inverse = (1/det) * adj(A)
  		double[][] inverse = new double[3][3];
 		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
+			for (int j = 0; j < 3; j++)
 				inverse[i][j] = adj[i][j] / det;
-			}
 		}
 
 		return inverse;
@@ -98,7 +98,7 @@ A−1 =    			1              [d -b]
 
 		double[][] cofactor = new double[4][4];
 		
-		// matrice des cofacteurs
+		// cofactor matrix
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
 				double[][] minor = new double[3][3];
@@ -148,7 +148,7 @@ A−1 =    			1              [d -b]
 	// [0.0, 1.0, 0.0]
 	// [0.0, 0.0, 1.0]
 
-	// Test 2 : Diagonale simple
+	// Test 2 : Simple diagonal
 	double[][] m2 = {
             {2.0, 0.0, 0.0},
             {0.0, 2.0, 0.0},
@@ -160,7 +160,7 @@ A−1 =    			1              [d -b]
         // [0.0, 0.5, 0.0]
         // [0.0, 0.0, 0.5]
 
-        // Test 3 : Cas général
+        // Test 3 : General case
         double[][] m3 = {
             {8.0, 5.0, -2.0},
             {4.0, 7.0, 20.0},

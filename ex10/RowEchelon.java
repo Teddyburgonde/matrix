@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class RowEchelon {
 
+    // transform a matrix -> row echelon form.
 	public static double[][] rowEchelon(double[][] A){
 	
 		for (int i = 0; i < A.length; ++i) {
@@ -14,6 +15,7 @@ public class RowEchelon {
     			for (int k = i + 1; k < A.length; ++k) {
     				double factor = A[k][i];
     				for (int j = 0; j < A[0].length; ++j) {
+                        // mathematical formula
     					A[k][j] = A[k][j] - factor * A[i][j];
     				}
     			}
