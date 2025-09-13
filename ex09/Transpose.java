@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class Transpose {
 
+	// We swap the rows and columns.
 	public static double[][] transpose(double[][] A) {
 		double[][] T = new double[A[0].length][A.length];
 		

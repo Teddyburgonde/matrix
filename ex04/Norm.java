@@ -11,6 +11,7 @@ public class Norm {
 	
 	// To raise a number to the square -> Math.pow(x, 2)
 	// For the square root ->  Math.sqrt(x)
+	// Euclidean distance : It is the length of the straight line between two points.
 	public static double norm2(double[] v) {
 
 		double R = 0;
@@ -20,6 +21,7 @@ public class Norm {
 		return Math.sqrt(R);
 	}
 
+	// Takes the largest absolute value among the elements.
 	public static double normInf(double[] v) {
 		double R = 0;
 		for (int i = 0; i < v.length; ++i) {

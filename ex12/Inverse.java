@@ -150,9 +150,9 @@ A−1 =    			1              [d -b]
 
 	// Test 2 : Diagonale simple
 	double[][] m2 = {
-            {2., 0., 0.},
-            {0., 2., 0.},
-            {0., 0., 2.}
+            {2.0, 0.0, 0.0},
+            {0.0, 2.0, 0.0},
+            {0.0, 0.0, 2.0}
         };
 	System.out.println(Arrays.deepToString(Inverse.inverse3x3(m2)));
         // expected:
@@ -162,9 +162,9 @@ A−1 =    			1              [d -b]
 
         // Test 3 : Cas général
         double[][] m3 = {
-            {8., 5., -2.},
-            {4., 7., 20.},
-            {7., 6., 1.}
+            {8.0, 5.0, -2.0},
+            {4.0, 7.0, 20.0},
+            {7.0, 6.0, 1.0}
         };
 	System.out.println(Arrays.deepToString(Inverse.inverse3x3(m3)));
         // expected approx:

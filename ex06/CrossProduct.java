@@ -1,3 +1,9 @@
+/*
+	The vector product takes two 3D vectors - > a third vector
+	This vector is : 
+	- Perpendicular to the first two
+	- Its length = the area of the parallelogram formed by the two vectors.
+*/
 public class CrossProduct {
 
 	public static double[] crossProduct(double[] u, double[] v) {

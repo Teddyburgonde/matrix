@@ -1,5 +1,11 @@
 import java.util.Arrays;
 
+
+/*
+The determinant is used to determine whether a square matrix is invertible: 
+if the determinant ≠ 0, it is invertible; otherwise, it is not.
+*/
+
 public class Determinant {
 	
 	// det = ad - bc
@@ -36,7 +42,7 @@ public class Determinant {
 					subMatrix[i - 1][subCol] = A[i][j];
 					subCol++;
 				}
-        		}
+        	}
 
  			double sign;
 			if (col % 2 == 0)
@@ -63,33 +69,33 @@ public class Determinant {
 
 	public static void main(String[] args) {
 		double[][] m1 = {
-			{1., -1.},
-			{-1., 1.}
+			{1.0, -1.0},
+			{-1.0, 1.0}
 		};
 		System.out.println(determinant(m1));
 		// expected : 0.0
 
 		double[][] m2 = {
-			{2., 0., 0.},
-			{0., 2., 0.},
-			{0., 0., 2.}
+			{2.0, 0.0, 0.0},
+			{0.0, 2.0, 0.0},
+			{0.0, 0.0, 2.0}
 		};
 		System.out.println(determinant(m2));
 		// expected : 8.0
 
 		double[][] m3 = {
-			{8., 5., -2.},
-			{4., 7., 20.},
-			{7., 6., 1.}
+			{8.0, 5.0, -2.0},
+			{4.0, 7.0, 20.0},
+			{7.0, 6.0, 1.0}
 		};
 		System.out.println(determinant(m3));
 		// expected : -174.0
 
 		double[][] m4 = {
-			{8., 5., -2., 4.},
-			{4., 2.5, 20., 4.},
-			{8., 5., 1., 4.},
-			{28., -4., 17., 1.}
+			{8.0, 5.0, -2.0, 4.0},
+			{4.0, 2.5, 20.0, 4.0},
+			{8.0, 5.0, 1.0, 4.0},
+			{28.0, -4.0, 17.0, 1.0}
 		};
 		System.out.println(determinant(m4));
 		// expected : 1032.0

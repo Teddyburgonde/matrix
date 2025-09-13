@@ -1,5 +1,6 @@
 public class Trace {
 
+	// Sum of the elements of the main diagonal
 	public static double trace(double[][] A) {
 		if (A.length != A[0].length) {
     		throw new IllegalArgumentException("Matrix is not square");

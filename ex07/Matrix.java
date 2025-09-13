@@ -52,7 +52,6 @@ public class Matrix {
 		return matrice;
 	}
 
-	// -------- Main de test --------
 	public static void main(String[] args) {
 		// ---- Matrix × Vector ----
  		double[][] m1 = {{1, 0}, {0, 1}};

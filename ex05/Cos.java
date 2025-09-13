@@ -8,7 +8,9 @@ public class Cos {
 		} 
 		return Math.sqrt(R); 
 	}
-
+	// If the cosine is close to 1 ➝ the vectors point in the same direction.
+	// If it is 0 ➝ they are perpendicular (no relationship).
+	// If it is close to -1 ➝ they point in opposite directions.
 	public static double cosine(double[] u, double[] v) {
 		double resultScalaire = 0;
 		if ( u.length != v.length)

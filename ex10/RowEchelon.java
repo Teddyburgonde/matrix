@@ -25,32 +25,32 @@ public class RowEchelon {
 	
 	public static void main(String[] args) {
         double[][] m1 = {
-            {1., 0., 0.},
-            {0., 1., 0.},
-            {0., 0., 1.}
+            {1.0, 0.0, 0.0},
+            {0.0, 1.0, 0.0},
+            {0.0, 0.0, 1.0}
         };
         System.out.println(Arrays.deepToString(rowEchelon(m1)));
         // expected: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
         double[][] m2 = {
-            {1., 2.},
-            {3., 4.}
+            {1.0, 2.0},
+            {3.0, 4.0}
         };
         System.out.println(Arrays.deepToString(rowEchelon(m2)));
         // expected: [[1.0, 2.0], [0.0, 1.0]]
         // Mathematically -0.0 = 0.0
 
         double[][] m3 = {
-            {1., 2.},
-            {2., 4.}
+            {1.0, 2.0},
+            {2.0, 4.0}
         };
         System.out.println(Arrays.deepToString(rowEchelon(m3)));
         // expected: [[1.0, 2.0], [0.0, 0.0]]
 
         double[][] m4 = {
-            {8., 5., -2., 4., 28.},
-            {4., 2.5, 20., 4., -4.},
-            {8., 5., 1., 4., 17.}
+            {8.0, 5.0, -2.0, 4.0, 28.0},
+            {4.0, 2.5, 20.0, 4.0, -4.0},
+            {8.0, 5.0, 1.0, 4.0, 17.0}
         };
         System.out.println(Arrays.deepToString(rowEchelon(m4)));
         // expected approx: [[1.0, 0.625, 0.0, 0.0, -12.166...],
